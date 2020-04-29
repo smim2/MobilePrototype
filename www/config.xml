@@ -6,9 +6,9 @@
         id        = "com.phonegap.helloworld"
         version   = "1.0.0">
 		
-		<edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-    <string>Need location draw map</string>
-</edit-config>
+	<edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+    <	string>Need location draw map</string>
+	</edit-config>
 
     <name>Prototype</name>
 
@@ -25,7 +25,7 @@
         following tag to your config.xml; you will still have the INTERNET
         permission on your app, which PhoneGap requires.
     -->
-    <!--<preference name="permissions"                value="none"/> -->
+    <preference name="permissions"                value="none"/>
 
     <!-- Customize your app and platform with the preference element. -->
     <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
