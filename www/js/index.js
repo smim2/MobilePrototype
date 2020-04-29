@@ -37,8 +37,8 @@ defib3 = {lat: 52.1937585, lng: -2.2260509};
 var worc;
 worc = {lat: 52.192, lng: -2.220};
 
-var latitude = 0.00;
-var longitude=0.00;
+var latitude = 52.5586913;
+var longitude=-1.5282136;
 
 //navigator.geolocation.getCurrentPosition(successPosition, failPosition);
 
@@ -63,7 +63,7 @@ var longitude=0.00;
 
     var options = {
       center: Userlatlng,
-      zoom: 15,
+      zoom: 8,
       
     };
 
@@ -75,6 +75,7 @@ var longitude=0.00;
 	google.maps.event.addDomListener(document.getElementById('GoWorc'), 'click', function () {
 
     map.setCenter(new google.maps.LatLng(52.192,-2.220));
+	
 	
 //Sets a new "Position" Marker in worc, for demo purposes	
 	var marker1 = new google.maps.Marker({
