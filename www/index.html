@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prototype map</title>
+	
+    <meta name="viewport" content="initial-scale=1.0">
+	
+    <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="jqm/jquery.mobile-1.4.5.min.css">
+        
+    <script type="application/javascript" src="jqm/jquery-1.12.4.js"></script>
+    <script type="application/javascript" src="jqm/jquery.mobile-1.4.5.min.js"></script>
+	
+	<script src="js\index.js"></script>
+	
+	<style>
+	body{
+	background-color: black;
+	
+	}
+	  
+	
+      #h2{
+	  text-align: center;
+	  
+	  }
+	 
+      #map_canvas {
+		width: 100%;
+		height: 92%;
+		
+		
+		margin: 0px;
+      }
+	  
+	  #info{
+	  width: 100%;
+	  height: 92%;
+		
+		
+		margin: 0px;
+	  }
+	   #footer {
+		width: 100%;
+		height: 8%;
+		background-color: lightgrey;
+		text-align: center;
+      }
+	 
+	  
+      #pageone{
+	  
+	   
+       height: 100%;
+       width:  100%;
+        
+		background-color: black;
+	  }
+      
+	  #page2{
+	
+	   
+       height: 100%;
+       width:  100%;
+        
+		background-color: black;
+		
+		
+	  }
+    </style>
+    
+  </head>
+  <body>
+  
+	<div data-role="page" id="pageone">
+		
+		<div id="map_canvas">
+		</div>	
+		
+        <div id="footer">
+			<button id="GoWorc" class = "ui-btn ui-btn-inline ui-corner-all">Demo</button>
+			<button id="GoDefib" class = "ui-btn ui-btn-inline ui-corner-all">Defibrillator</button>
+			<button id="GoHos" class = "ui-btn ui-btn-inline ui-corner-all">Hospital</button>
+			<a href="#page2" class="ui-btn ui-btn-inline ui-shadow ui-corner-all">Info</a>
+			
+		</div>
+          
+    </div> 
+<!-- -------------------------------------------Page2--------------------------->		
+	<div data-role="page" id="page2">
+		<div id="info">
+			<h2>Please adjust settings here</h2>
+		</div>
+            
+		<div id="footer">
+			<a href="#pageone" class="ui-btn ui-btn-bottom ui-btn-inline ui-shadow ui-corner-all">Back to map</a>
+		</div>
+
+    </div> 
+		
+  	
+	</div>
+	
+	
+	
+  </body>
+  
+</html>
