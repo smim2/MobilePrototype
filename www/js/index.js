@@ -37,26 +37,27 @@ defib3 = {lat: 52.1937585, lng: -2.2260509};
 var worc;
 worc = {lat: 52.192, lng: -2.220};
 
-var latitude;
-var longitude;
+var latitude = 0.00;
+var longitude=0.00;
 
-navigator.geolocation.getCurrentPosition(successPosition, failPosition);
+//navigator.geolocation.getCurrentPosition(successPosition, failPosition);
 
-function successPosition(position) {
+//function successPosition(position) {
 
 	
-	latitude = position.coords.latitude;
-	longitude = position.coords.longitude;
-	console.log(latitude)
-	console.log(longitude)
-	drawmap();
-}
-function failPosition(error) {
-	alert("Failed to retrieve position");
-}
+//	latitude = position.coords.latitude;
+//	longitude = position.coords.longitude;
+//	console.log(latitude)
+//	console.log(longitude)
+//	drawmap();
+//}
+//function failPosition(error) {
+//	alert("Failed to retrieve position");
+//}
 
 
-function drawmap() {
+//function drawmap() {
+	window.onload=function(){
     var mapDiv = document.getElementById("map_canvas");
     var Userlatlng = new google.maps.LatLng(latitude, longitude);
 
