@@ -1,11 +1,7 @@
 document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady(){
-	
-	console.log("Device Ready");
-	console.log("navigator.geolocation works well");
-}
-
-
+    function onDeviceReady() {
+       	
+    }
 
 
 // Create the script tag, set the appropriate attributes
@@ -17,6 +13,17 @@ script.async = true;
 // Attach your callback function to the `window` object
 window.initMap = function() {
   // JS API is loaded and available
+  console.log("Hi");
+	navigator.geolocation.getCurrentPosition(geolocationSuccess,[geolocationError]);
+	var onSuccess = function(position){
+	latitude = position.coords.latitude;
+	longitude = position.coords.longitude;
+};
+	function onError(error){
+	alert("Error" + error.code)
+}
+
+navigator.geolocation.getCurrentPosition(onSuccess, onError); 
 };
 
 // Append the 'script' element to 'head'
@@ -38,7 +45,11 @@ var worc;
 worc = {lat: 52.192, lng: -2.220};
 
 var latitude = 52.5586913;
-var longitude=-1.5282136;
+var longitude= -1.5282136;
+function GetLoc(){
+
+console.log("hi");
+}
 
 //navigator.geolocation.getCurrentPosition(successPosition, failPosition);
 

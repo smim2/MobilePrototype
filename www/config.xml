@@ -110,5 +110,8 @@
 	
 </config-file>
 </platform>
+<edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+    <string>need location access to find things nearby</string>
+</edit-config>
 
 </widget>
