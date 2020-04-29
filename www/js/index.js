@@ -39,6 +39,7 @@ worc = {lat: 52.192, lng: -2.220};
 
 var latitude;
 var longitude;
+
 navigator.geolocation.getCurrentPosition(successPosition, failPosition);
 
 function successPosition(position) {
@@ -53,7 +54,7 @@ function successPosition(position) {
 function failPosition(error) {
 	alert("Failed to retrieve position");
 }
-navigator.geolocation.getCurrentPosition(onSuccess, failPosition);
+
 
 function drawmap() {
     var mapDiv = document.getElementById("map_canvas");
