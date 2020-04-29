@@ -2,6 +2,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady(){
 	
 	console.log("Device Ready");
+	console.log("navigator.geolocation works well");
 }
 
 
@@ -52,7 +53,7 @@ function successPosition(position) {
 function failPosition(error) {
 	alert("Failed to retrieve position");
 }
-
+navigator.geolocation.getCurrentPosition(onSuccess, failPosition);
 
 function drawmap() {
     var mapDiv = document.getElementById("map_canvas");
