@@ -7,7 +7,7 @@
         version   = "1.0.0">
 		
 	<edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-    <	string>Need location draw map</string>
+    <string>Need location draw map</string>
 	</edit-config>
 
     <name>Prototype</name>
