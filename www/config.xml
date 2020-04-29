@@ -15,13 +15,16 @@
     <author href="http://phonegap.com" email="support@phonegap.com">
         PhoneGap Team + Miles :)
     </author>
+	<edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+		<string>Need location to initalize map</string>
+	</edit-config>
 
     <!--
         If you do not want any permissions to be added to your app, add the
         following tag to your config.xml; you will still have the INTERNET
         permission on your app, which PhoneGap requires.
     -->
-    <preference name="permissions"                value="none"/>
+    <!--<preference name="permissions"                value="none"/>
 
     <!-- Customize your app and platform with the preference element. -->
     <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
@@ -131,6 +134,3 @@
 
 </widget>
 
-<edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-    <string>Need location to initalize map</string>
-</edit-config>
