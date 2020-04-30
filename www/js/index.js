@@ -1,4 +1,3 @@
-
 var latitude = 52.5586913;
 var longitude= -1.5282136;
 
@@ -19,20 +18,15 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        navigator.geolocation.getCurrentPosition(geolocationSuccess,[geolocationError]);
-		var onSuccess = function(position){
-			latitude = position.coords.latitude;
-			longitude = position.coords.longitude;
-		};
-		function onError(error){
-			alert("Error" + error.code)
-};
-navigator.geolocation.getCurrentPosition(onSuccess, onError); 
+        app.receivedEvent('deviceready');
+		latitude = 0;
+		longitude = 0;
+		startmap();
     },
     
 };
 
-/*document.addEventListener("deviceready", onDeviceReady, false);
+/*ocument.addEventListener("deviceready", onDeviceReady, false);
     function onDeviceReady() {
        	navigator.geolocation.getCurrentPosition(geolocationSuccess,[geolocationError]);
 	var onSuccess = function(position){
@@ -43,9 +37,10 @@ navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	alert("Error" + error.code)
 }
 
-
+navigator.geolocation.getCurrentPosition(onSuccess, onError); 
 };
-*/    
+*/
+    
 
 
 // Create the script tag, set the appropriate attributes
@@ -80,7 +75,8 @@ worc = {lat: 52.192, lng: -2.220};
 
 
 
-	window.onload=function(){
+
+	/*window.onload=*/function startmap(){
     var mapDiv = document.getElementById("map_canvas");
     var Userlatlng = new google.maps.LatLng(latitude, longitude);
 
