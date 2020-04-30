@@ -19,14 +19,12 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-		latitude = 0;
-		longitude = 0;
 		startmap();
     },
+    // Update DOM on a Received Event
     
 };
-
-/*ocument.addEventListener("deviceready", onDeviceReady, false);
+/*document.addEventListener("deviceready", onDeviceReady, false);
     function onDeviceReady() {
        	navigator.geolocation.getCurrentPosition(geolocationSuccess,[geolocationError]);
 	var onSuccess = function(position){
@@ -52,6 +50,7 @@ script.async = true;
 // Attach your callback function to the `window` object
 window.initMap = function() {
   // JS API is loaded and available
+  
 } 
 	
 
