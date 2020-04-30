@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<!-- base config.xml reference used: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.helloworld"
+        id        = "com.phonegap.LocateDefibrillator"
         version   = "1.0.0">
 		
 	
 
-    <name>Prototype</name>
+    <name>Locate Defibrillator</name>
 
     <description>
         My actual app prototype
@@ -102,14 +102,8 @@
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
     <string>100</string>
     </gap:config-file>
+<!-- This portion of code is taken from https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-geolocation/ -->
 
-    <platform name="ios">
- <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
-    
-    <string>Need location draw map</string>
-	
-</config-file>
-</platform>
 <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
     <string>need location access to find things nearby</string>
 </edit-config>

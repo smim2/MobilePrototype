@@ -5,7 +5,7 @@ var longitude= -1.5282136;
 /*The code below is my attempt to implement geolocation, it is not currently working
 However it has been left in to show the attempt, feedback is welcome.
 The attempted logic is declare the variables for lat & long, once device is ready
-Use geolocator plugin to set lat and long to the devices location. 
+Use geolocator plugin is to set lat and long to the devices location. 
 Due to this not functioning, the lat & long variables are currently static.*/
 
 /*document.addEventListener("deviceready", onDeviceReady, false);
@@ -26,7 +26,6 @@ navigator.geolocation.getCurrentPosition(onSuccess, onError);
 //The following code is adapted from the google map api tutorial linking the js and html files:
 //https://developers.google.com/maps/documentation/javascript/tutorial <- Loading the map/Dynamic loading
 
-
 var script = document.createElement('script');
 script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAy6qaNJOjP75X89IBmDmOYiYKr4qwqYKg&callback=initMap';
 script.defer = true;
@@ -38,10 +37,8 @@ window.initMap = function() {
   startmap();
 } 
 
-
 // Append the 'script' element to 'head'
 document.head.appendChild(script);
-
 
 
 //setting the locations for demo defib data around worcester using static variables
@@ -61,15 +58,16 @@ worc = {lat: 52.195877, lng: -2.225772};
 
 /*This function was origionally intended to draw the map centered on the device GPS location,
 However currently uses the UserlatLong variable which uses the static values for lat and long.
+
 Gets the map canvas element from the html file */
 
 	/*window.onload=*/function startmap(){
     var mapDiv = document.getElementById("map_canvas");
     var Userlatlng = new google.maps.LatLng(latitude, longitude);
-
+//Setting the options for the map
     var options = {
       center: Userlatlng,
-      zoom: 12,
+      zoom: 16,
       
     };
 // draws the map using the options defined above
@@ -80,7 +78,7 @@ Gets the map canvas element from the html file */
 //linking to the demo button	
 	google.maps.event.addDomListener(document.getElementById('GoWorc'), 'click', function () {
 //Setting the new center to demo location (Worcester)
-    map.setCenter(new google.maps.LatLng(52.192,-2.220));
+    map.setCenter(new google.maps.LatLng(52.195877,-2.225772));
 	
 	
 //Sets a new "Position" Marker in worc, for demo purposes	
@@ -123,8 +121,8 @@ Gets the map canvas element from the html file */
 		map: map,
 		icon: iconBase1 + 'icon55.png'
 	});
-//The following code is used to add markers to the map, code based on the google tutorial:
-//https://developers.google.com/maps/documentation/javascript/custom-markers
+//The following code is used to draw the directions to the defibrillator using polylines:
+//https://developers.google.com/maps/documentation/javascript/examples/polyline-simple#try-it-yourself
 	
 	google.maps.event.addDomListener(document.getElementById('GoDefib'), 'click', function () {
 

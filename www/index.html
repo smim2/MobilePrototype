@@ -18,13 +18,15 @@
     
   </head>
   <body>
-  
+  <!-- -------------------------------------------Page1--------------------------->
+<!-- page one consists of the map element and some buttons in the footer -->	
 	<div data-role="page" id="pageone">
 		
 		<div id="map_canvas">
 		</div>	
 		
         <div id="footer">
+		
 			<button id="GoWorc" class = "ui-btn ui-btn-inline ui-corner-all">Demo</button>
 			<button id="GoDefib" class = "ui-btn ui-btn-inline ui-corner-all">Defibrillator</button>
 			
@@ -33,7 +35,8 @@
 		</div>
           
     </div> 
-<!-- -------------------------------------------Page2--------------------------->		
+<!-- -------------------------------------------Page2--------------------------->
+<!-- page two contains a brief tutorial and a link to googles location policy -->		
 	<div data-role="page" id="page2">
 		<div id="info">
 			<h2>How to use the prototype</h2>
@@ -62,7 +65,7 @@
   	
 	</div>
 	
-	
+	<!--Script currently unused due to geolocation/ device ready function not working -->
 	<script type="text/javascript">
             app.initialize();
         </script>
