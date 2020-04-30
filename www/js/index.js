@@ -1,7 +1,51 @@
-document.addEventListener("deviceready", onDeviceReady, false);
+
+var latitude = 52.5586913;
+var longitude= -1.5282136;
+
+var app = {
+    // Application Constructor
+    initialize: function() {
+        this.bindEvents();
+    },
+    // Bind Event Listeners
+    //
+    // Bind any events that are required on startup. Common events are:
+    // 'load', 'deviceready', 'offline', and 'online'.
+    bindEvents: function() {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
+    // deviceready Event Handler
+    //
+    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // function, we must explicitly call 'app.receivedEvent(...);'
+    onDeviceReady: function() {
+        navigator.geolocation.getCurrentPosition(geolocationSuccess,[geolocationError]);
+		var onSuccess = function(position){
+			latitude = position.coords.latitude;
+			longitude = position.coords.longitude;
+		};
+		function onError(error){
+			alert("Error" + error.code)
+};
+navigator.geolocation.getCurrentPosition(onSuccess, onError); 
+    },
+    
+};
+
+/*document.addEventListener("deviceready", onDeviceReady, false);
     function onDeviceReady() {
-       	
-    }
+       	navigator.geolocation.getCurrentPosition(geolocationSuccess,[geolocationError]);
+	var onSuccess = function(position){
+	latitude = position.coords.latitude;
+	longitude = position.coords.longitude;
+};
+	function onError(error){
+	alert("Error" + error.code)
+}
+
+
+};
+*/    
 
 
 // Create the script tag, set the appropriate attributes
@@ -13,18 +57,8 @@ script.async = true;
 // Attach your callback function to the `window` object
 window.initMap = function() {
   // JS API is loaded and available
-  console.log("Hi");
-	navigator.geolocation.getCurrentPosition(geolocationSuccess,[geolocationError]);
-	var onSuccess = function(position){
-	latitude = position.coords.latitude;
-	longitude = position.coords.longitude;
-};
-	function onError(error){
-	alert("Error" + error.code)
-}
-
-navigator.geolocation.getCurrentPosition(onSuccess, onError); 
-};
+} 
+	
 
 // Append the 'script' element to 'head'
 document.head.appendChild(script);
@@ -44,37 +78,15 @@ defib3 = {lat: 52.1937585, lng: -2.2260509};
 var worc;
 worc = {lat: 52.192, lng: -2.220};
 
-var latitude = 52.5586913;
-var longitude= -1.5282136;
-function GetLoc(){
-
-console.log("hi");
-}
-
-//navigator.geolocation.getCurrentPosition(successPosition, failPosition);
-
-//function successPosition(position) {
-
-	
-//	latitude = position.coords.latitude;
-//	longitude = position.coords.longitude;
-//	console.log(latitude)
-//	console.log(longitude)
-//	drawmap();
-//}
-//function failPosition(error) {
-//	alert("Failed to retrieve position");
-//}
 
 
-//function drawmap() {
 	window.onload=function(){
     var mapDiv = document.getElementById("map_canvas");
     var Userlatlng = new google.maps.LatLng(latitude, longitude);
 
     var options = {
       center: Userlatlng,
-      zoom: 8,
+      zoom: 12,
       
     };
 
